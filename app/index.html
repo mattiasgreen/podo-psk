@@ -16,7 +16,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="Polymer Starter Kit" />
-  <title>Polymer Starter Kit</title>
+  <title>Podo</title>
   <!-- Place favicon.ico in the `app/` directory -->
 
   <!-- Chrome for Android theme color -->
@@ -74,20 +74,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <!-- Drawer Content -->
         <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]">
-          <a data-route="home" href="/" on-click="onDataRouteClick">
+		  <a data-route="todo" href="/todo" on-click="onDataRouteClick">
             <iron-icon icon="home"></iron-icon>
-            <span>Home</span>
+            <span>Todo</span>
           </a>
 
-          <a data-route="users" href="/users" on-click="onDataRouteClick">
+          <a data-route="settings" href="/settings" on-click="onDataRouteClick">
             <iron-icon icon="info"></iron-icon>
-            <span>Users</span>
+            <span>Settings</span>
           </a>
-
-          <a data-route="contact" href="/contact" on-click="onDataRouteClick">
-            <iron-icon icon="mail"></iron-icon>
-            <span>Contact</span>
-          </a>
+		  
         </paper-menu>
       </paper-scroll-header-panel>
 
@@ -105,12 +101,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <!-- Application name -->
           <div class="middle middle-container center horizontal layout">
-            <div class="app-name">Polymer Starter Kit</div>
+            <div class="app-name">Todo</div>
           </div>
 
           <!-- Application sub title -->
           <div class="bottom bottom-container center horizontal layout">
-            <div class="bottom-title paper-font-subhead">The future of the web today</div>
+            <div class="bottom-title paper-font-subhead">Just do it!</div>
           </div>
 
         </paper-toolbar>
@@ -119,7 +115,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <div class="content">
           <iron-pages attr-for-selected="data-route" selected="{{route}}">
 
-            <section data-route="home">
+            <section data-route="settings">
               <paper-material elevation="1">
                 <my-greeting></my-greeting>
 
@@ -153,37 +149,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             </section>
 
-            <section data-route="users">
+            <section data-route="todo">
               <paper-material elevation="1">
-                <h2 class="page-title">Users</h2>
-                <p>This is the users section</p>
-                <a href="/users/Rob">Rob</a>
+                <h2 class="page-title">Todo</h2>
+                <p>This is the todo section</p>
+                <a href="/todo/1">1</a>
               </paper-material>
             </section>
 
-            <section data-route="user-info">
+            <section data-route="todo-info">
               <paper-material elevation="1">
                 <h2 class="page-title">
-                User:<span>{{params.name}}</span>
+                <span>{{params.id}}</span>
                 </h2>
-                <div>This is <span>{{params.name}}</span>'s section</div>
+                <div>Description of task <span>{{params.id}}</span>.</div>
               </paper-material>
             </section>
 
-            <section data-route="contact">
-              <paper-material elevation="1">
-                <h2 class="page-title">Contact</h2>
-                <p>This is the contact section</p>
-              </paper-material>
-            </section>
-
-          </iron-pages>
+			</iron-pages>
         </div>
       </paper-scroll-header-panel>
     </paper-drawer-panel>
 
-    <!-- Uncomment next block to enable Service Worker support (1/2) -->
-    <!--
     <paper-toast id="caching-complete"
                  duration="6000"
                  text="Caching complete! This app will work offline.">
@@ -197,7 +184,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                          cache-config-file="cache-config.json">
       </platinum-sw-cache>
     </platinum-sw-register>
-    -->
+
 
   </template>
 

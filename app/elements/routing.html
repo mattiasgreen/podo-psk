@@ -39,6 +39,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     page('/contact', scrollToTop, function() {
       app.route = 'contact';
     });
+	
+	page('/todo', function () {
+		app.route = 'todo';
+	});
+	
+	page('/todo/:id', scrollToTop, function(data) {
+      app.route = 'todo-info';
+      app.params = data.params;
+    });
+	
+	page('/settings', function () {
+		app.route = 'settings';
+	});
 
     // add #! before urls
     page({
